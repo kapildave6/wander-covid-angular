@@ -1,0 +1,35 @@
+<div class="mt-5" class="count-summary justify-content-center text-center">
+    <div class="alert alert-dark" role="alert">
+        <h3>Total Cases<span class="badge badge-secondary">{{totalCases}}</span></h3>
+        <h3>Total Active Cases<span class="badge badge-secondary">{{activeCases}}</span></h3>
+    <h3>Total Deceased Cases<span class="badge badge-secondary">{{deceasedCases}}</span></h3>
+    </div>
+    
+</div>
+<div class="row container mt-2">
+
+    <div class="mt-5 col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 chart-div">
+        <div class="alert alert-dark text-center" role="alert">
+            Overall Cases by Gender
+        </div>
+        <div id="gender_pie_chart"></div>
+    </div>
+    <div class="mt-5 col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 chart-div">
+        <div class="alert alert-dark  text-center" role="alert">
+            Overall Cases by Status
+        </div>
+        <div id="status_pie_chart"></div>
+    </div>
+    <div class="mt-5 col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 chart-div">
+        <div class="alert alert-dark  text-center" role="alert">
+            Daily cases by current status
+        </div>
+        <div id="date_status_chart"></div>
+    </div>
+    <div class="mt-5 col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 chart-div">
+        <div class="alert alert-dark  text-center" role="alert">
+            Daily cases by current gender
+        </div>
+        <div id="date_gender_chart"></div>
+    </div>
+</div>

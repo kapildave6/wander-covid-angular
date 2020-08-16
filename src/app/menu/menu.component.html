@@ -1,0 +1,13 @@
+<header>
+    <nav class="navbar navbar-expand navbar-light bg-light">
+        <div class="nav navbar-nav">
+            <a class="nav-item nav-link active" href="#">COVID 19<span class="sr-only">(current)</span></a>
+            <a class="nav-link" *ngIf="authentication.isUserLoggedIn()" routerLink="/welcome">Home</a>
+            <a class="nav-link" *ngIf="authentication.isUserLoggedIn()" routerLink="/list">List</a>
+            <a class="nav-link" *ngIf="authentication.isUserLoggedIn()" routerLink="/summary">Summary</a>
+            <a class="nav-link" routerLink="/register" *ngIf="!authentication.isUserLoggedIn()" >Register</a>
+            <a class="nav-link" routerLink="/login" *ngIf="!authentication.isUserLoggedIn()" >Login</a>
+            <a class="nav-link" *ngIf="authentication.isUserLoggedIn()" routerLink="/logout">Logout</a>
+        </div>
+    </nav>
+</header>

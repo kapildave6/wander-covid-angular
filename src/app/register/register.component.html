@@ -1,0 +1,56 @@
+<div class="container mt-5">
+    <div *ngIf="displayMessage" class="alert" [ngClass]="{'alert-danger': errorMessage, 'alert-info': !errorMessage}">
+        {{message}}
+    </div>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
+        <div class="form-group">
+            <label for="name">Name : </label>
+            <input formControlName="name" type="text" required name="" class="form-control" placeholder="">
+            <div *ngIf="f.name.invalid && (f.name.dirty || f.name.touched)" class="alert alert-danger">
+                <div *ngIf="f.name.errors.required">
+                    Name is required.
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email Address : </label>
+            <input formControlName="email" type="text" required name="" class="form-control" placeholder="">
+            <div *ngIf="f.email.invalid && (f.email.dirty || f.email.touched)" class="alert alert-danger">
+
+                <div *ngIf="f.email.errors.required">
+                    Email Address is required.
+                </div>
+                <div *ngIf="f.email.errors.email">
+                    Email Address must be a valid Email.
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password : </label>
+            <input formControlName="password" type="text" required name="" class="form-control" placeholder="">
+            <div *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)" class="alert alert-danger">
+                <div *ngIf="f.password.errors.required">
+                    Password is required.
+                </div>
+                <div *ngIf="f.password.errors.minlength">
+                    Password must be atleast 8 characters long.
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password : </label>
+            <input formControlName="confirmPassword" type="text" required name="" class="form-control" placeholder="" pattern="{{ f.password.value }}">
+            <div *ngIf="f.confirmPassword.invalid && (f.confirmPassword.dirty || f.confirmPassword.touched)" class="alert alert-danger">
+                <div *ngIf="f.confirmPassword.errors.required">
+                    Confirm Password is required.
+                </div>
+                <div *ngIf="f.confirmPassword.errors.pattern">
+                    Confirm Password must be same as Password.
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button [disabled]="!registerForm.valid" type="submit" class="btn btn-primary">Register</button>
+        </div>
+    </form>
+</div>

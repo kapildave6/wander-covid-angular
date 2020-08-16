@@ -1,0 +1,28 @@
+<div class="container">
+    <h1 class="justify-content-center text-center">Covid Summary</h1>
+    <!-- <button (click)="getCasesDetails()" class="btn btn-success">Get Details</button> -->
+
+    <div class="mb-3">
+        <div class="row">
+            <div class="col-3">
+                <select id="state" class="form-control" (change)="selectionChange($event)">
+                    <option value="">Filter By State</option>
+                    <option [value]="state.id" *ngFor="let state of states">{{state.name}}</option>
+                </select>
+            </div>
+            <div class="col-3">
+                <select id="gender"  class="form-control" (change)="selectionChange($event)">
+                    <option value="">Filter By Gender</option>
+                    <option value="MALE">Male</option>
+                    <option value="FEMALE">Female</option>
+                </select>
+            </div>
+            <div class="col-3">
+                <button class="btn btn-primary" (click)="showResult(searchForm.value)">Show</button>
+            </div>
+        </div>
+    </div>
+
+    <app-charts [covidSummary]="covidSummary"></app-charts>
+
+</div>
